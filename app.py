@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, Response
+from flask import Flask, render_template, request, Response, send_from_directory
 import qrcode
 import base64
 import io
@@ -59,6 +59,10 @@ def sitemap():
 """,
         mimetype="application/xml"
     )
+
+@app.route("/google92f273bbe2a325e0.html")
+def google_verification():
+    return send_from_directory(".", "google92f273bbe2a325e0.html")
 
 if __name__ == "__main__":
         app.run()
